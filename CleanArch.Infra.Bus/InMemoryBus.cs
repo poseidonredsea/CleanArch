@@ -1,6 +1,9 @@
 ﻿using ClearnArch.Domain.Core.Bus;
 using ClearnArch.Domain.Core.Commands;
 using MediatR;
+using System;
+using System.Collections.Generic;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace CleanArch.Infra.Bus
@@ -14,7 +17,7 @@ namespace CleanArch.Infra.Bus
             _mediator = mediator;
         }
 
-        public Task SendCommand<T>(T command) where T : Command 
+        public Task SendCommand<T>(T command) where T : Command
         {
             return _mediator.Send(command);
         }
